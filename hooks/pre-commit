@@ -1,0 +1,28 @@
+#!/bin/bash
+
+VERBOTEN="master stable/havana stable/grizzly"
+
+CURRENT_BRANCH=`git branch --list --no-color | grep '^*' | sed 's/* //'`
+
+function fail() {
+    local branch=$1
+    cat<<EOF
+STOP THE PRESS!
+
+You are trying to commit on the *$branch* branch
+Surely you don't mean that?
+
+If you really do, force the commit by adding --no-verify to the command.
+
+EOF
+    exit 1
+}
+
+# if we find a .gitreview, then check for unsafe branches
+if [[ -e .gitreview ]]; then
+    for branch in $VERBOTEN; do
+        if [[ "$branch" == "$CURRENT_BRANCH" ]]; then
+            fail $branch
+        fi
+    done
+fi
