@@ -16,9 +16,11 @@ Installation is pretty straight forward.
 
 ::
    git clone https://github.com/sdague/git_template
+
    git config --global templatedir /PATH/TO/git_template
 
    cd somedirectory
+
    git init
 
 Note you can git init an existing git repository, and it will copy
