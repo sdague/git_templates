@@ -14,7 +14,7 @@ Installation
 Installation is pretty straight forward.
 
     git clone https://github.com/sdague/git_template
-    git config --global templatedir /PATH/TO/git_template
+    git config --global init.templatedir /PATH/TO/git_template
 
     cd somedirectory
     git init
