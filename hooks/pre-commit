@@ -18,7 +18,7 @@
 # under the License.
 
 
-VERBOTEN="master stable/havana stable/grizzly"
+VERBOTEN="master stable/mitaka stable/liberty stable/kilo"
 
 CURRENT_BRANCH=`git branch --list --no-color | grep '^*' | sed 's/* //'`
 
